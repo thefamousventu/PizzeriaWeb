@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizzeria bella Napoli</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="tm-header">
+    <h1 class="tm-title">Pizzeria bella Napoli</h1>
+  </header>
+
+  <nav class="tm-tabs">
+    <button class="tm-tab is-active" data-target="Pizze">Pizze</button>
+    <button class="tm-tab" data-target="Dolci">Dolci</button>
+    <button class="tm-tab" data-target="Bevande">Bevande</button>
+  </nav>
+
+  <main class="tm-menu">
+
+    <!-- elenco pizze -->
+    <div id="Pizze" class="tm-tab-content is-active">
+      <div class="tm-list">
+
+      </div>
+    </div>
+
+    <!-- elenco dolci -->
+    <div id="Dolci" class="tm-tab-content">
+      <div class="tm-list">
+
+      </div>
+    </div>
+
+    <!-- elenco bevande -->
+    <div id="Bevande" class="tm-tab-content">
+      <div class="tm-list">
+
+        <!-- riga di menu di esempio: copiala dentro la tua sezione e modificala -->
+        <div class="tm-list-item">
+          <img src="img/espresso.svg" alt="Immagine" class="tm-list-item-img">
+          <div class="tm-list-item-text">
+            <h3 class="tm-list-item-name">Caffè Espresso <span class="tm-list-item-price">€2.50</span></h3>
+            <p class="tm-list-item-description">Miscela arabica di qualità superiore.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- end Menu Page -->
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

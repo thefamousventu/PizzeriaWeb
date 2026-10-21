@@ -1,0 +1,115 @@
+/* Pizzeria bella Napoli - stile del menu */
+:root {
+  --mare: #0d2f3a;
+  --mare-chiaro: #17495a;
+  --limone: #f1c94b;
+  --testo: #f4f7f6;
+  --testo-secondario: #b9ccd0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--testo);
+  background: linear-gradient(160deg, var(--mare) 0%, var(--mare-chiaro) 100%) fixed;
+}
+
+.tm-header {
+  padding: 2.5rem 1rem 1rem;
+  text-align: center;
+}
+
+.tm-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* schede Pizze / Dolci / Bevande */
+.tm-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.tm-tab {
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  padding: 0.5rem 0.25rem;
+  font: inherit;
+  font-size: 1.1rem;
+  color: var(--testo-secondario);
+  cursor: pointer;
+}
+
+.tm-tab:hover { color: var(--testo); }
+.tm-tab.is-active { color: var(--testo); border-bottom-color: var(--limone); }
+.tm-tab:focus-visible { outline: 2px solid var(--limone); outline-offset: 3px; }
+
+/* contenuto del menu */
+.tm-menu {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1rem 3rem;
+}
+
+.tm-tab-content { display: none; }
+.tm-tab-content.is-active { display: block; }
+
+.tm-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tm-list-item-img {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--mare);
+}
+
+.tm-list-item-text { flex: 1; }
+
+.tm-list-item-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 0.35rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.tm-list-item-price { color: var(--limone); }
+
+.tm-list-item-description {
+  margin: 0;
+  color: var(--testo-secondario);
+  line-height: 1.5;
+}
+
+/* messaggio mostrato finché la sezione non ha portate */
+.tm-list:not(:has(.tm-list-item))::before {
+  content: "Nessuna portata inserita in questa sezione.";
+  display: block;
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--testo-secondario);
+}
+
+@media (max-width: 480px) {
+  .tm-tabs { gap: 1rem; }
+  .tm-list-item-img { width: 72px; height: 72px; }
+}
